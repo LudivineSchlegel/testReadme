@@ -22,13 +22,25 @@ lien : https://travis-ci.org/LudivineSchlegel/projet-CICD
 
 Integration continue du dépot github vers le gitHeroku puis création de l'application.
 
-3 testes :
+3 étapes de déploiment :
 
   - install
   
-compilation de l'application :
+compilation de l'application.
 
 commande : <i>./gradlew assemble</i>
+
   - test
-  - name: deploy
-if: branch = master
+  
+test du bon fonstionnement de l'application
+
+commande : <i>./gradlew check</i>
+
+et en parallèle test de fonctionnement scripte: 
+
+commande : <i>echo "test en parallele"</i>
+
+  - deploy
+  
+ deploiment 
+    if: branch = master
