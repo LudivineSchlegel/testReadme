@@ -68,3 +68,12 @@ commande :
 ```
 avec $HEROKU_API_KEY une variable d'environement definie dans travis CI
 
+<img src="Capture du 2018-02-05 10-36-46.png" alt="logo git"/>
+
+<h2>problèmes rencontrés</h2>
+
+principalement la prise en main de TRAVIS Ci : 
+
+* documentaion faible, peu d'example
+* partie "stage" et "job" très peu détailler et expliquer (élémments en version béta)
+* documentation pour trouver comment faire une clef sécuriser sous heroku et l'intégrer dans trevis dificile à trouver. Donc déploiment de travis CI vers heroku difficile a mettre en place.
