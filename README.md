@@ -23,32 +23,43 @@ Integration continue du dépot github vers le gitHeroku puis création de l'appl
 
 création d'un fichier <a href="https://github.com/LudivineSchlegel/projet-CICD/blob/master/.travis.yml">.travis.yml</a>
 
-3 étapes de déploiment :
-
+3 étapes de déploiment organiser de la façon suivante :
+```
+stages:
+  - install
+  - test
+  - name: deploy
+    if: branch = master
+```
   - install
   
 compilation de l'application.
 
-commande : <i>./gradlew assemble</i>
+commande : 
+
+```script: ./gradlew assemble```
 
   - test
   
 test du bon fonstionnement de l'application
 
-commande : <i>./gradlew check</i>
+commande : 
+
+```script: ./gradlew check```
 
 et en parallèle test de fonctionnement scripte: 
 
-commande : <i>echo "test en parallele"</i>
+commande : 
+
+```script: echo "test en parallele"```
 
   - deploy
   
  deploiment sur heroku si sur branche masteur.
  
- condition : if: branch = master
- 
  commande :
  ``` 
+    script: skip
     deploy: &heroku
        provider: heroku
        api-key: 
@@ -56,3 +67,4 @@ commande : <i>echo "test en parallele"</i>
        app: limitless-ravine-55613
 ```
 avec $HEROKU_API_KEY une variable d'environement definie dans travis CI
+
