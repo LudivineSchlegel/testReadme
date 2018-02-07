@@ -1,29 +1,24 @@
-# Projet integration continue
-<!--
-<img src="https://assets-cdn.github.com/images/modules/open_graph/github-mark.png" alt="logo git" height="20"/>
+# Projet intégration continue
 
-#<a href="https://github.com/">github</a>
-#<b>boid</b>
-#<i>italic</i>
--->
 <h2>Bases</h2>
-Projet se basant sur la documentation de déploiment d'une aplication web en Java avec Heroku:
+
+Projet se basant sur la documentation de déploiement d'une application web en Java avec HEROKU:
 
 https://devcenter.heroku.com/articles/getting-started-with-gradle-on-heroku
 
-dépot original: https://github.com/heroku/gradle-getting-started
+Dépôt original: https://github.com/heroku/gradle-getting-started
 
-Integration continue avec <a href="https://travis-ci.org/">Travis CI</a>
+Intégration continue avec <a href="https://travis-ci.org/">Travis CI</a>
 
-lien : https://travis-ci.org/LudivineSchlegel/projet-CICD
+Lien : https://travis-ci.org/LudivineSchlegel/projet-CICD
 
-<h2>Integration continue</h2>
+<h2>Intégration continue</h2>
 
-Integration continue du dépot github vers le gitHeroku puis création de l'application.
+Intégration continue du dépôt github vers le gitHeroku puis création de l'application.
+Création d'un fichier <a href="https://github.com/LudivineSchlegel/projet-CICD/blob/master/.travis.yml">.travis.yml</a>
 
-création d'un fichier <a href="https://github.com/LudivineSchlegel/projet-CICD/blob/master/.travis.yml">.travis.yml</a>
+3 étapes de déploiements organisées de la façon suivante :
 
-3 étapes de déploiment organiser de la façon suivante :
 ```
 stages:
   - install
@@ -33,31 +28,32 @@ stages:
 ```
   - install
   
-compilation de l'application.
+Compilation de l'application.
 
-commande : 
+Commande : 
 
 ```script: ./gradlew assemble```
 
   - test
   
-test du bon fonstionnement de l'application
+Test du bon fonctionnement de l'application.
 
-commande : 
+Commande :
 
 ```script: ./gradlew check```
 
-et en parallèle test de fonctionnement scripte: 
+Et en parallèle test de fonctionnement scripte:
 
-commande : 
+Commande :
 
 ```script: echo "test en parallele"```
 
   - deploy
   
- deploiment sur heroku si sur branche masteur.
- 
- commande :
+Déploiement sur HEROKU si sur branche master.
+
+Commande  :
+
  ``` 
     script: skip
     deploy: &heroku
@@ -66,14 +62,14 @@ commande :
         secure: $HEROKU_API_KEY
        app: limitless-ravine-55613
 ```
-avec $HEROKU_API_KEY une variable d'environement definie dans travis CI
+avec $HEROKU_API_KEY une variable d'environnement définie dans Travis CI
 
 <img src="Capture du 2018-02-05 10-36-46.png" alt="logo git"/>
 
-<h2>problèmes rencontrés</h2>
+<h2>Problèmes rencontrés</h2>
 
-principalement la prise en main de TRAVIS Ci : 
+Principalement la prise en main de TRAVIS Ci : 
 
-* documentaion faible, peu d'example
-* partie "stage" et "job" très peu détailler et expliquer (élémments en version béta)
-* documentation pour trouver comment faire une clef sécuriser sous heroku et l'intégrer dans trevis dificile à trouver. Donc déploiment de travis CI vers heroku difficile a mettre en place.
+* documentation faible, peu d’exemples
+* partie "stage" et "job" très peu détailler et expliquer (éléments en version béta)
+* documentation pour trouver comment faire une clef sécurisée sous HEROKU et l'intégrer dans Travis CI difficile à trouver. Donc déploiement de Travis CI vers HEROKU difficile à mettre en place.
