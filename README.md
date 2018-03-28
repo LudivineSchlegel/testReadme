@@ -7,6 +7,7 @@ Projet se basant sur la documentation de déploiement d'une application web en J
 https://devcenter.heroku.com/articles/getting-started-with-gradle-on-heroku
 
 Dépôt original: https://github.com/heroku/gradle-getting-started
+*****
 
 Intégration continue avec <a href="https://travis-ci.org/">Travis CI</a>
 
