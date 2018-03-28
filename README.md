@@ -8,7 +8,7 @@ https://devcenter.heroku.com/articles/getting-started-with-gradle-on-heroku
 
 Dépôt original: https://github.com/heroku/gradle-getting-started
 
-Intégration continue avec <a href="https://travis-ci.org/">Travis CI</a>
+Intégration continue avec <a href="https://travis-ci.org/">Travis</a>
 
 Lien : https://travis-ci.org/LudivineSchlegel/projet-CICD
 
